@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Algum Título</h1>
-      <img src="/img/banner.jpg" style="width:800px; height:1000px;">
+      <img src="/img/banner.jpg" style="width:1600px; height:600px;">
         <p>{{ $nome }}</p>
 
         @if( $nome == "Pedro")
