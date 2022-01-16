@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
 Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
+Route::get('/events/cadastrar', [EventController::class, 'cadastrar'])->name('events.cadastrar');
 
 Route::get('/contact', function (){
     return view('contact');

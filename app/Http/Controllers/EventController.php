@@ -29,4 +29,9 @@ class EventController extends Controller
     {
         return view('events.create');
     }
+
+    public function cadastrar()
+    {
+        return view('events.cadastrar');
+    }
 }

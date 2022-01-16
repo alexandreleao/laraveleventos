@@ -42,7 +42,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#" class="nav-link">Cadastrar</a>
+                <a href="{{ route('events.cadastrar') }}" class="nav-link">Cadastrar</a>
             </li>
         </ul>
     </div>
