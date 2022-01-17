@@ -20,35 +20,36 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="collapse navbar-collapse" id="navbar">
-        <a class="navbar-brand" href="/">
-            <img src="/img/events.png" alt="Events">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="{{ route('index')}}" class="nav-link">Eventos</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="{{ route('events.create') }}" class="nav-link">Criar Eventos</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Entrar</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a href="{{ route('events.cadastrar') }}" class="nav-link">Cadastrar</a>
-            </li>
-        </ul>
-    </div>
-  </div>
-</nav>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/events.png" style="height:50px" alt="Events">
+                </a>
+            <div class="collapse navbar-collapse" id="navbar">
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ route('index')}}" class="nav-link">Eventos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ route('events.create') }}" class="nav-link">Criar Eventos</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Entrar</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Cadastrar</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+       </nav>
+    </header>
         @yield('content')
 
     <footer> 

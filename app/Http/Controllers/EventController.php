@@ -1,28 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-    $nome =  "Alexandre";
-    $idade = 42;
-    $programador = 'programador';
 
-    $arr = [10,20,30,40,50];
+     $events = Event::all(); 
 
-    $nomes = ["Alexandre", "Camila", "João", "Henrique", "Noah"];
-
-    return view('welcome',
-    ['nome' => $nome, 
-     'idade' => $idade, 
-     'programador' => $programador,
-     'arr' => $arr,
-     'nomes'=>$nomes
-    ]); 
+     return view('welcome',['events' => $events]); 
     }
 
     public function create()
@@ -30,8 +19,20 @@ class EventController extends Controller
         return view('events.create');
     }
 
-    public function cadastrar()
+
+    public function store(Request $request)
     {
-        return view('events.cadastrar');
+       $event = new Event;
+
+       $event->title = $request->title;
+       $event->city = $request->city;
+       $event->private = $request->private;
+       $event->description = $request->description;
+
+       $event->save();
+
+       return redirect('/');
     }
+
+   
 }

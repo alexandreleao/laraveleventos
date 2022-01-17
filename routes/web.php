@@ -18,20 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class, 'index'])->name('index');
 Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
-Route::get('/events/cadastrar', [EventController::class, 'cadastrar'])->name('events.cadastrar');
+Route::post('/events/store', [EventController::class, 'store'])->name('events.store');
+
 
 Route::get('/contact', function (){
     return view('contact');
-});
-
-Route::get('/produtos', function (){
-    
-$search = request('search');
-
-    return view('products', ['search' => $search]);
-});
-
-Route::get('/product_teste/{id?}', function ($id = null){
-
-    return view('product', ['id' => $id]);
 });
