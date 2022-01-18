@@ -20,6 +20,14 @@ class EventController extends Controller
     }
 
 
+    public function show($id)
+    {
+        $event = Event::findOrFail($id);
+
+        return view('events.show', ['event' => $event]);
+    }
+
+
     public function store(Request $request)
     {
        $event = new Event;
@@ -29,9 +37,25 @@ class EventController extends Controller
        $event->private = $request->private;
        $event->description = $request->description;
 
-       $event->save();
+       //Image Upload
+       if($request->hasFile('image') && $request->file('image')->isValid()){
+          
+           $requestImage = $request->image;
+           
+           $extension = $requestImage->extension();
 
-       return redirect('/');
+           $imageName = md5($requestImage->getClientOriginalExtension(). strtotime("now")). "." . $extension;
+
+           $requestImage->move(public_path('img/events'), $imageName);
+
+           $event->image = $imageName;
+        
+       }
+
+       $event->save();
+      
+       return redirect('/')->with('msg', 'Evento criado com sucesso!'); 
+       
     }
 
    

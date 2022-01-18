@@ -13,7 +13,8 @@ class EventFactory extends Factory
             'title' =>$this->faker->title(), 
             'description' =>$this->faker->text(),
             'city' =>$this->faker->city(),
-            'private'=>$this->faker->boolean()
+            'private'=>$this->faker->boolean(),
+            'image'=>$this->faker->image()
         ];
     }
 }
