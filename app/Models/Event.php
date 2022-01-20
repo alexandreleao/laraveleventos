@@ -9,5 +9,9 @@ class Event extends Model
 {
     use HasFactory;
 
-    public $table = "events";
+    protected $casts = [
+        'items' => 'array'
+    ];
+
+    protected $dates = ['date'];
 }
