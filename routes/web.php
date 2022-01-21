@@ -25,3 +25,7 @@ Route::post('/events/store', [EventController::class, 'store'])->name('events.st
 Route::get('/contact', function (){
     return view('contact');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
