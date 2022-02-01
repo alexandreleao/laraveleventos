@@ -4,6 +4,16 @@
 
 @section('content')
 
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $e)
+                    <li>{{ $e }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
 <div class="col-md-10 offset-md-1 dashboard-title-container">
     <h1>Meus Eventos</h1>
 </div>
@@ -54,12 +64,12 @@
             <th scope="col">Ações</th>
         </tr>
     </thead>
-
+    
 <tbody>
     @foreach ($eventsasparticipant as $event )
         <tr>
             <th scope="row">{{ $loop->index + 1 }}</th>
-            <td><a href="/events/{{ $event->id }}">{{ $event->title }}</a></td>
+            <td><a href=" /events/{{ $event->id }} "> {{ $event->title }}</a></td>
             <td>{{ count($event->users) }}</td>
         <td>
            <form action="/events/leave/{{ $event->id }}" method="POST">
@@ -75,7 +85,7 @@
     @endforeach
 </tbody>
 </table>
-@else:
+@else
 <p>Você ainda não está participando de nenhum evento, <a href="/">Veja todos os eventos</a></p>
 @endif
 </div>

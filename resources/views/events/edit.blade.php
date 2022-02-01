@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
                 <label for="title">Evento:</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do Evento" value="{{$event->title}}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Nome do Evento" value=" {{$event->title}} ">
             </div>
             <div class="form-group">
               <label for="date">Data do Evento:</label>
